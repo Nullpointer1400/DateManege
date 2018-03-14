@@ -30,8 +30,8 @@ public class DateManager : MonoBehaviour {
 		string json = www.text;
 		//上のstring型の変数をjsonutillityでjsonとして読み込む
 		time ntime = JsonUtility.FromJson<time> (json);
-		//日付として使用できる変数
-		string DateTime =ntime.Year+":"+ntime.Month+":"+ntime.Day+":"+ntime.Hour+":"+ntime.Minute+":"+ntime.Second;
+		//日付をtextに表示するための準備
+		string DateTime =ntime.Year.ToString()+":"+ntime.Month.ToString()+":"+ntime.Day.ToString()+":"+ntime.Hour.ToString()+":"+ntime.Minute.ToString()+":"+ntime.Second.ToString();
 		text.text = DateTime;
 		yield return new WaitForSeconds(0.1f);
 		StartCoroutine (Date ());
